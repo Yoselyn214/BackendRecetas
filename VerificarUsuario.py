@@ -1,17 +1,21 @@
+import json
+import boto3
+
 def lambda_handler(event, context):
     # Obtener los parámetros de la solicitud GET
-    username = event['Username']
+    correo_electronico = event['Correo_electronico']
     password = event['Contrasena']
 
     # Conectar a DynamoDB
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('User')  # Nombre de tu tabla de usuarios
 
-    # Consultar la base de datos para buscar al usuario por nombre de usuario
+    # Consultar la base de datos para buscar al usuario por correo electrónico
     response = table.query(
-        IndexName='Username-index', 
-        KeyConditionExpression=boto3.dynamodb.conditions.Key('Username').eq(username)
+        IndexName='Correo_electronico-index', 
+        KeyConditionExpression=boto3.dynamodb.conditions.Key('Correo_electronico').eq(correo_electronico)
     )
+
     # Verificar si el usuario existe en la base de datos
     if response['Items']:
         # El usuario existe, ahora verifica la contraseña
