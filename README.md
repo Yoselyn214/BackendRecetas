@@ -9,6 +9,7 @@
   
   Metodo: Post
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/registro`
+    ![]("2.png")
 
 - **Verificar Usuario**:
   
