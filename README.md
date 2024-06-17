@@ -15,6 +15,7 @@
   
   Metodo: Post
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/login`
+    ![](3.png)
 
 
 - **Ver Perfil**:
@@ -28,6 +29,7 @@
   
    Metodo: Post
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/post`
+    ![](4.png)
 
 - **Ver Todos los Posts**:
   
