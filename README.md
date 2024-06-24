@@ -49,7 +49,24 @@
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/ComentarioPrueba/Cocina/comentario/consulta/{Post_id}`
 
 - **Registrar Comentario**:
-  
+
   Método: Post
-  - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/comentario`
+         - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/comentario`
+ 
+  ## Visualización
+ - **Registrar receta**:
+   
+      Método: Post
+    
+         - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas`
+
+
+  - **Obtener recetas por id**
+
+       Método: Get
+     
+        - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas/consulta/{Receta_id}`
+
+ - **Obtener recetas por nombre**
+  - URL:
 
