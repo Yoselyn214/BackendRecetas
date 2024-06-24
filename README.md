@@ -33,7 +33,7 @@
 
 - **Ver Todos los Posts**:
   
-   Metodo: Post
+   Metodo: Get
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/post`
 
 - **Ver Posts de un Usuario**:
