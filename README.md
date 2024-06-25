@@ -26,7 +26,10 @@
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/login`
     ![](3.png)
 
-
+- **Editar Perfil** (Editar presentación)
+Método: Put
+- URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Usuario/Cocina/Usuario`
+- Requiere un json de entrada con 'Usuario_id' y 'Presentacion' 
 - **Ver Perfil**:
   
   Metodo: Get
