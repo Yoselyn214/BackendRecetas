@@ -13,10 +13,7 @@ def lambda_handler(event, context):
     post_id = path_params.get('Post_id')
     
     if not post_id:
-        return {
-            'statusCode': 400,
-            'body': json.dumps({'message': 'ID del post no proporcionado en los parámetros de la ruta'})
-        }
+        return generate_response(400, {'message': 'ID del post no proporcionado en los parámetros de la ruta'})
 
     # Conectar a DynamoDB
     dynamodb = boto3.resource('dynamodb')
@@ -27,10 +24,7 @@ def lambda_handler(event, context):
         try:
             post_id = int(post_id)
         except ValueError:
-            return {
-                'statusCode': 400,
-                'body': json.dumps({'message': 'ID del post debe ser un número'})
-            }
+            return generate_response(400, {'message': 'ID del post debe ser un número'})
 
         # Realizar la consulta a la tabla Comentario usando el índice
         response = comment_table.query(
@@ -39,31 +33,29 @@ def lambda_handler(event, context):
         )
         
         if 'Items' not in response or not response['Items']:
-            return {
-                'statusCode': 404,
-                'body': json.dumps({'message': 'Comentario no encontrado'})
-            }
+            return generate_response(404, {'message': 'Comentario no encontrado'})
         else:
             comentario = response['Items']
-            
-            return {
-                'statusCode': 200,
-                'body': json.dumps(comentario, default=decimal_default)
-            }
+            return generate_response(200, comentario)
     except ClientError as e:
         # Registrar el error para depuración
         print("ClientError: ", e)
-        return {
-            'statusCode': 500,
-            'body': json.dumps({'message': 'Error al obtener el comentario', 'error': str(e)})
-        }
+        return generate_response(500, {'message': 'Error al obtener el comentario', 'error': str(e)})
     except Exception as e:
         # Registrar cualquier otro error no anticipado
         print("Exception: ", e)
-        return {
-            'statusCode': 500,
-            'body': json.dumps({'message': 'Error interno del servidor', 'error': str(e)})
-        }
+        return generate_response(500, {'message': 'Error interno del servidor', 'error': str(e)})
+
+def generate_response(status_code, body):
+    return {
+        'statusCode': status_code,
+        'headers': {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type',
+        },
+        'body': json.dumps(body, default=decimal_default)
+    }
 
 def decimal_default(obj):
     if isinstance(obj, Decimal):
