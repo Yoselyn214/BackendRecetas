@@ -54,6 +54,12 @@
          - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/PostUserr/Cocina/comentario`
  
   ## Visualización
+ - **Obtener todas las recetas** (100 primeras)
+
+   Método: Get
+
+         - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas/consulta`
+   
  - **Registrar receta**:
    
       Método: Post
