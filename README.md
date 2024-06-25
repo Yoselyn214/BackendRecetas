@@ -68,5 +68,7 @@
         - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas/consulta/{Receta_id}`
 
  - **Obtener recetas por nombre**
-  - URL:
+   
+   Método: Post
+  - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas/consulta`
 
