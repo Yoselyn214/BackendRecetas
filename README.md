@@ -8,12 +8,12 @@
   
   Metodo: Put
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Usuario/Cocina/Usuario/seguidores`
-
+    ![](actualizarSeguidores.png)
 - **Disminuir Seguidores**:
   
   Metodo: Put
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Usuario/Cocina/Usuario/seguidores/disminuir`
-  
+    ![](disminuirSeguidores.png)
 - **Registrar Usuario**:
   
   Metodo: Post
