@@ -55,6 +55,18 @@ Método: Put
 
 ## Comentarios
 
+- **Aumentar Likes**:
+  
+  Metodo: Put
+  - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Usuario/Cocina/Usuario/like`
+    ![](like.png)
+    
+- **Quitar Likes**:
+  
+  Metodo: Put
+  - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Usuario/Cocina/Usuario/quitarlike`
+    ![](quitarLike.png)
+    
 - **Consultar Comentarios de un Post**:
   
   Método: Get
