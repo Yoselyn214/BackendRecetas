@@ -101,4 +101,10 @@ Método: Put
    
    Método: Post
   - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas/consulta`
-
+- **Obtener recetas por mínimo y máximo de calorias**
+  Metodo: Post
+  - URL: `https://h0z4t4u2d9.execute-api.us-east-1.amazonaws.com/Receta/Cocina/recetas/range`
+  - Body:
+    ```{json}
+    {'min_calories': ___, 'max_calories': ___}
+    ```
