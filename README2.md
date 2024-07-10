@@ -5,3 +5,16 @@ https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post
 ## Método Post para registro de comentario:
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comentario
+
+## Método Get para traer todos los post:
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post
+
+## Método Get para traer los post de un usuario:
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/PostUser/PostUser/{Usuario_id}
+
+## Método Get para consultar comentarios de un Post:
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post/{Post_id}
+
