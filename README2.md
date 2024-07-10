@@ -86,3 +86,10 @@ https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comenta
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comentario/likes/decrementar
 
+## Incrementar seguidores (Put)
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Usuario/Usuario/seguidores/incrementar
+
+## DecrementarSeguidores de usuario(Put)
+
+ https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Usuario/Usuario/seguidores/incrementar
