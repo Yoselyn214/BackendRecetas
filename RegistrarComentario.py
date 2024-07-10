@@ -7,27 +7,37 @@ def lambda_handler(event, context):
     body = event
     
     # Verificar que todas las claves necesarias estén presentes en el cuerpo de la solicitud
-    required_keys = ['Usuario_id', 'Post_id', 'Contenido', 'Fecha', 'Hora']
+    required_keys = ['Usuario_id', 'Post_id', 'Contenido', 'Fecha', 'Hora', 'Username']
     missing_keys = [key for key in required_keys if key not in body]
     
     if missing_keys:
         return generate_response(400, {'message': f'Faltan las siguientes claves en el cuerpo de la solicitud: {", ".join(missing_keys)}'})
     
-    # Extraer y convertir los valores de DynamoDB a los tipos esperados
+    # Extraer y convertir los valores a los tipos esperados
     try:
-        usuario_id = int(body['Usuario_id']['N'])  # Asegurarse de que Usuario_id es un entero
-        post_id = int(body['Post_id']['N'])
-        likes = int(body.get('Likes', {'N': 0})['N'])  # Asignar un valor predeterminado si 'Likes' no está presente
-        comentario_id = int(body['Comentario_id']['N'])
+        usuario_id = int(body['Usuario_id'])
+        post_id = int(body['Post_id'])
+        likes = int(body.get('Likes', 0))  # Asignar un valor predeterminado si 'Likes' no está presente
+        username = body['Username']
     except (ValueError, KeyError, TypeError) as e:
         return generate_response(400, {'message': 'Error en la conversión de datos', 'error': str(e)})
     
     # Conectar a DynamoDB
     dynamodb = boto3.resource('dynamodb')
+    user_table = dynamodb.Table('User')
     comment_table = dynamodb.Table('Comentario')
     counter_table = dynamodb.Table('CounterComentarios') 
     
+    # Verificar si el usuario existe en la tabla User
     try:
+        user_response = user_table.get_item(Key={'Usuario_id': usuario_id, 'Username': username})
+        if 'Item' not in user_response:
+            return generate_response(400, {'message': 'Usuario no existe en la tabla User'})
+    except ClientError as e:
+        return generate_response(500, {'message': 'Error al verificar el usuario', 'error': str(e)})
+    
+    try:
+        # Incrementar el contador y obtener el nuevo Comentario_id
         response = counter_table.update_item(
             Key={'Comentarios_Count': 'ComentarioCounter'},
             UpdateExpression='ADD CounterValue :increment',
@@ -38,15 +48,15 @@ def lambda_handler(event, context):
     except ClientError as e:
         return generate_response(500, {'message': 'Error al obtener el siguiente Comentario_id', 'error': str(e)})
     
-    # Extraer datos del cuerpo de la solicitud
+    # Preparar los datos del comentario para guardarlos en la tabla de comentarios
     comentario = {
         'Comentario_id': comentario_id,
         'Usuario_id': usuario_id,
         'Post_id': post_id,
-        'Contenido': body['Contenido']['S'],
+        'Contenido': body['Contenido'],
         'Likes': likes,
-        'Fecha': body['Fecha']['S'],
-        'Hora': body['Hora']['S']
+        'Fecha': body['Fecha'],
+        'Hora': body['Hora']
     }
     
     # Guardar los datos en la tabla de comentarios
@@ -67,8 +77,3 @@ def generate_response(status_code, body):
         },
         'body': json.dumps(body)
     }
-
-
-
-
-  
