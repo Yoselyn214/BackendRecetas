@@ -2,6 +2,10 @@
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post
 
+## Método Get para obtener Receta por el Id:
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Recipes/{Receta_id}
+
 ## Método Post para registro de comentario:
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comentario
