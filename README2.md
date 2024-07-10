@@ -70,3 +70,19 @@ https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Cocina/Post
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Cocina/Comentario
 
+## Decrementar likes de un post(Put):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post/likes/decrementar 
+
+## Incrementar likes de un post(Put):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post/likes/incrementar
+
+## Decrementar likes de un comentario(Put)
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comentario/likes/decrementar
+
+## Incrementar likes de un comentario (Put):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comentario/likes/decrementar
+
