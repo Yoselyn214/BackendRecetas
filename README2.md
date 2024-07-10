@@ -18,3 +18,55 @@ https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/PostUser/PostUser/{Usuari
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Post/Cocina/Post/{Post_id}
 
+## Recetas por nombre (Post): 
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Recipes/Nombre
+
+## Todas las recetas con límite 100 (Get):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Recipes
+
+## Registrar receta (Post): 
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Recipes
+
+## Usuario login (Post): 
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Usuario/Login
+
+## Usuario register (Post):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Usuario/Register
+
+## Usuario por id (Get):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Usuario/{Usuario_id}
+
+## Decremento seguidores (Put):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Usuario/seguidores/decrementar
+
+## Incremento seguidores (Put):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Usuario/seguidores/incrementar
+
+## Post por usuario id (Get): 
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/PostUser/{Usuario_id}
+
+## Post por post id (Get):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Cocina/Post/{Post_id}
+
+## Registrar Post (Post):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Cocina/Post
+
+## Conseguir todos los Posts (Get): 
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Cocina/Post
+
+## Registrar comentario (Post): 
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Cocina/Comentario
+
