@@ -65,3 +65,7 @@ https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Recetas/Recetas
 ## Traer todas las recetas (100) mediante método get:
 
 https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Recetas/Recetas
+
+## Método Get para traer los post de un usuario:
+
+https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/PostUser/PostUser/{Usuario_id}
