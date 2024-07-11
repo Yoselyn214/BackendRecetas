@@ -93,3 +93,7 @@ https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Comentario/Cocina/Comenta
 ## Range search por calorias (Post):
 
 https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Recetas/Recipes/rangeCalories
+
+## Obtener todos los usuarios (Get):
+
+https://zsf3957lq6.execute-api.us-east-1.amazonaws.com/Usuario/Usuario
