@@ -61,3 +61,7 @@ https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Recetas/calories
 ## Registrar receta mediante método post:
 
 https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Recetas/Recetas
+
+## Traer todas las recetas (100) mediante método get:
+
+https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Recetas/Recetas
