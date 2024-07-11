@@ -70,6 +70,10 @@ https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Recetas/Recetas
 
 https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/PostUser/PostUser/{Usuario_id}
 
-##Método Get para traer al usuario por id:
+## Método Get para traer al usuario por id:
 
 https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Usuario/Usuario/{Usuario_id}
+
+## Método get para que traiga todos los usuarios:
+
+https://71c30bu5xl.execute-api.us-east-1.amazonaws.com/Usuario/Usuario
