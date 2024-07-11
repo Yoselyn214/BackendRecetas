@@ -1,5 +1,11 @@
 import json
 import boto3
+from decimal import Decimal
+
+def decimal_default(obj):
+    if isinstance(obj, Decimal):
+        return float(obj)
+    raise TypeError
 
 def lambda_handler(event, context):
     # Obtener los parámetros de la solicitud GET
@@ -24,7 +30,14 @@ def lambda_handler(event, context):
             # La contraseña coincide, usuario autenticado
             return {
                 'statusCode': 200,
-                'body': json.dumps({'message': 'Usuario autenticado'})
+                'body': json.dumps(
+                    {
+                        'Usuario_id': user_data['Usuario_id'],
+                        'Username': user_data['Username'],
+                        'message': 'Usuario autenticado'
+                    },
+                    default=decimal_default
+                )
             }
         else:
             # La contraseña no coincide
